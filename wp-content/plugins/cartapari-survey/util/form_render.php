@@ -3,6 +3,7 @@
 require_once(ABSPATH . 'wp-config.php');
 
 function surveyForm(){
+    global $wpdb;
     $states = array("AG","AL","AN","AO","AQ","AR","AP","AT","AV","BA","BT","BL","BN","BG","BI","BO","BZ","BS","BR","CA",
         "CL","CB","CI","CE","CT","CZ","CH","CO","CS","CR","KR","CN","EN","FM","FE","FI","FG","FC","FR","GE","GO","GR",
         "IM","IS","SP","LT","LE","LC","LI","LO","LU","MC","MN","MS","MT","VS","ME","MI","MO","MB","NA","NO","NU","OG","OT",
@@ -12,7 +13,7 @@ function surveyForm(){
     $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
     mysqli_select_db($link, DB_NAME);
 
-    $query = "SELECT *FROM wp_survey_questions";
+    $query = "SELECT *FROM ".$wpdb->prefix."survey_questions";
     $result_questions = mysqli_query ($link, $query) or die ("Query  failed $query");
     $grouped_question_data = array();
 
@@ -29,7 +30,7 @@ function surveyForm(){
     }
 
 # Table with requirement and reference
-    $query = "SELECT *FROM wp_survey_questions_action";
+    $query = "SELECT *FROM ".$wpdb->prefix."survey_questions_action;";
     $result_questions_action = mysqli_query ($link, $query) or die ("Query  failed $query");
     $grouped_question_action_data = array();
 
@@ -79,7 +80,7 @@ function surveyForm(){
     }
     </style>";
 
-    $query = "SELECT *FROM wp_survey_action";
+    $query = "SELECT *FROM ".$wpdb->prefix."survey_action;";
     $result_actions = mysqli_query ($link, $query) or die ("Query  failed $query");
     echo "<form>";
     echo "<table id='table-1'>";
