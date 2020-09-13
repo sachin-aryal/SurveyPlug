@@ -1,5 +1,7 @@
 <?php
 
+require_once(ABSPATH . 'wp-config.php');
+
 function surveyForm(){
     $states = array("AG","AL","AN","AO","AQ","AR","AP","AT","AV","BA","BT","BL","BN","BG","BI","BO","BZ","BS","BR","CA",
         "CL","CB","CI","CE","CT","CZ","CH","CO","CS","CR","KR","CN","EN","FM","FE","FI","FG","FC","FR","GE","GO","GR",
@@ -211,8 +213,7 @@ function surveyForm(){
                         "
                     $reference_ele
                     <td width='10%' colspan='".$col_span."'>".$requirement."</td>
-                    <td width='45%'>".$question_row['criterion_parent']."</td>
-                    <td></td>
+                    <td width='45%' colspan='2'>".$question_row['criterion_parent']."</td>
                     <td width='5%'>
                         <select name='id1'>
                             <option value='yes'>Yes</option>
@@ -247,3 +248,5 @@ function surveyForm(){
     echo "</table>";
     echo "</form>";
 }
+
+add_shortcode("survey_form", "surveyForm");

@@ -18,7 +18,9 @@ defined('ABSPATH') or die("go away and bring abs path.");
 function_exists('add_action') or die("go away and bring the add_action.");
 
 require_once(ABSPATH . 'wp-config.php');
-require_once(ABSPATH .'wp-content/plugins/cartapari-survey/util/form_render.php');
+require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/util/install.php');
+require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/util/form_render.php');
 
 
 add_action("admin_menu", "addMenu");
@@ -28,9 +30,13 @@ function addMenu(){
 }
 
 function cartapariSurvey(){
-    echo "Dashbaord...";
+    echo "Dashboard....";
 }
 
 function exportCartapariSurveyData(){
+    echo "Exporting..";
     surveyForm();
 }
+
+register_activation_hook( __FILE__, 'createRequiredTables' );
+register_deactivation_hook( __FILE__, 'drop_tables' );
