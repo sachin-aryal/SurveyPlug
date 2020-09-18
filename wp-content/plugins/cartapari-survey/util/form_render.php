@@ -8,10 +8,12 @@ function surveyForm(){
         "OR","PD","PA","PR","PV","PG","PU","PE","PC","PI","PT","PN","PZ","PO","RG","RA","RC","RE","RI","RN","Roma","RO",
         "SA","SS","SV","SI","SR","SO","TA","TE","TR","TO","TP","TN","TV","TS","UD","VA","VE","VB","VC","VR","VV","VI","VT");
         echo "<style>
-            
+            table{
+                font-size: 12px !important;
+            }
             .form-design{
-                max-width: 100% !important;
-                width: 100% !important;
+                max-width: 98% !important;
+                width: 98% !important;
                 font-size: 12px !important;
             }
             #table-2 {
@@ -20,11 +22,20 @@ function surveyForm(){
                 margin: 30px 10px 10px !important;
             }
             #table-1{
+                width: 50% !important;
                 padding: 25PX !important;
+            }
+            #table-1 th{
+                border: 0px !important;
+            }
+            #table-1 td{
+                padding-right: 20px !important;
             }
             #table-2 td {
                 border: 1px solid #333 !important;
                 padding: 5px !important;
+                font-size: 12px;
+                width: 10% !important;
             }
             #table-1 th{
                 float: left !important;
