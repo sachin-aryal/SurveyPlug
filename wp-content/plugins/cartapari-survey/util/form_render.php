@@ -24,11 +24,13 @@ function surveyForm(){
             #table-1{
                 width: 50% !important;
                 padding: 25PX !important;
+                border: 0px;
             }
             #table-1 th{
                 border: 0px !important;
             }
             #table-1 td{
+                border: 0px !important;
                 padding-right: 20px !important;
             }
             #table-2 td {
