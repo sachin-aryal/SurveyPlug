@@ -7,6 +7,12 @@ function surveyForm(){
         "IM","IS","SP","LT","LE","LC","LI","LO","LU","MC","MN","MS","MT","VS","ME","MI","MO","MB","NA","NO","NU","OG","OT",
         "OR","PD","PA","PR","PV","PG","PU","PE","PC","PI","PT","PN","PZ","PO","RG","RA","RC","RE","RI","RN","Roma","RO",
         "SA","SS","SV","SI","SR","SO","TA","TE","TR","TO","TP","TN","TV","TS","UD","VA","VE","VB","VC","VR","VV","VI","VT");
+    $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco","Altri Servizi","Ambiente",
+        "Assistenza sociale","Assistenza sociale e protezione civile","Attività finanziarie e assicurative",
+        "Chimico e farmaceutico","Commercio all’ingrosso e al dettaglio","Cooperazione e solidarietà internazionale",
+        "Cultura-sport-ricreazione","Fornitura di energia elettrica, gas, acqua","Istruzione – ricerca",
+        "Manifatturiero","Media-grafica","Pubblica amministrazione","Relazioni sindacali e rappresentanza interessi",
+        "Sanità","Sviluppo economico e coesione sociale","Telecomunicazioni","Trasporti","Turistico","Altro (specificare)");
         echo "<style>
             table{
                 font-size: 12px !important;
@@ -42,7 +48,7 @@ function surveyForm(){
             #table-1 th{
                 float: left !important;
             }
-            #table-1 select, #table-1 input[type='text'], #table-1 input[type='date'], #table-1 textarea{
+            #table-1 select, #table-1 input[type='text'], #table-1 input[type='date'], #table-1 textarea, #table-1 input[type='email']{
               width:100% !important;
               box-sizing:border-box !important;
               margin-left: 20px !important;
@@ -65,11 +71,11 @@ function surveyForm(){
         echo "<caption>COMPANY DATA</caption></hr>";
         echo "<tbody>";
         echo "<tr>
-                <th>COMPANY NAME</th>
+                <th>NOME AZIENDA</th>
                 <td><textarea name='company_name' required='required'></textarea></td>
             </tr>";
         echo "<tr>
-                <th>COMPANY DATA</th>
+                <th>TIPOLOGIA ORGANIZZAZIONE</th>
                 <td>
                 <select name='company_data' required='required'>
                     <option value='1'>IMPRESA-ASSOCIAZIONE IMPRENDITORIALE</option>
@@ -79,8 +85,14 @@ function surveyForm(){
                 </td>
             </tr>";
         echo "<tr>
-                <th>SECTOR</th>
-                <td><textarea name='sector' required='required'></textarea></td>
+                <th>SETTORE</th>
+                <td>
+                <select name='sector' required='required'>";
+        foreach ($sectors as $sector){
+            echo "<option value='$sector'>$sector</option>";
+        }
+        echo        "</select>
+                </td>
             </tr>";
         echo "<tr>
                 <th>NUMBER OF EMPLOYEES</th>
@@ -96,7 +108,7 @@ function surveyForm(){
                 </td>
             </tr>";
         echo "<tr>
-                <th>STATE</th>
+                <th>PROVINCIA</th>
                 <td>
                 <select name='state' required='required'>";
         foreach ($states as $state){
@@ -107,7 +119,11 @@ function surveyForm(){
             </tr>";
         echo "<tr>
                 <th>PERSON WHO IS FILLING THE QUESTIONAIRE</th>
-                <td><input type='text' name='author' placeholder='Person Who Is Filling The Questionaire' required='required'/></td>
+                <td><input type='text' name='author' placeholder='Name and Role' required='required'/></td>
+            </tr>";
+        echo "<tr>
+                <th>EMAIL PER RICEZIONE RISULTATI</th>
+                <td><input type='email' name='author_email' placeholder='EMAIL PER RICEZIONE RISULTATI' required='required'/></td>
             </tr>";
         echo "<tr>
                 <th>DATE OF ISSUE</th>
