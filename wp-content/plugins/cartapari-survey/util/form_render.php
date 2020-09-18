@@ -62,7 +62,14 @@ function surveyForm(){
                   color: #444 !important;
                   text-align: center !important;
                   overflow: hidden !important;
+                  font-size: 12px !important;
             }
+            #table-2 textarea::placeholder {
+                text-align: center !important;
+                font-size: 12px !important;
+                line-height: 1em !important;
+                text-align: center !important;
+          }
             
         
         </style>";
@@ -163,7 +170,8 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_1' id='note_1'></textarea>
+                <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate, se si è scelto `altro`, indicare esplicitamente di cosa si tratta' 
+                name = 'note_1' id='note_1'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -185,7 +193,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_2' id='note_2'></textarea>
+                <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_2' id='note_2'></textarea>
             </td>";
         echo "</tr>";
         echo "<tr>";
@@ -220,7 +228,8 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_3' id ='note_3'></textarea>
+                <textarea rows='4' placeholder='Specificare a quale delle opzioni indicate si fa riferimento. Se si è scelto `altro`, indicare esplicitamente il ruolo della persona che ha assunto la responsabilità' 
+                name = 'note_3' id ='note_3'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -242,7 +251,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_4' id ='note_4'></textarea>
+                <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_4' id ='note_4'></textarea>
             </td>";
         echo "</tr>";
         echo "<tr>";
@@ -267,8 +276,9 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_5' id ='note_5'></textarea>
+            <td rowspan = '2'>
+                <textarea rows='4' placeholder='Indicare la % di popolazione aziendale femminile e illustrare le azioni intraprese.' 
+                name = 'note_5' id ='note_5'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -288,9 +298,6 @@ function surveyForm(){
                     <option value='yes'>Yes</option>
                     <option value='no'>No</option>
                 </select>
-            </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_6' id ='note_6'></textarea>
             </td>";
         echo "</tr>";
         echo "<tr>";
@@ -321,8 +328,9 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_7' id ='note_7'></textarea>
+            <td rowspan = '5'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali processi si fa riferimento' 
+                name = 'note_6' id ='note_6'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -336,9 +344,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_8' id ='note_8'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -351,9 +357,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_9' id ='note_9'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -366,9 +370,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_10' id ='note_10'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -381,9 +383,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_11' id ='note_11'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -409,8 +409,8 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_12' id ='note_12'></textarea>
+            <td rowspan = '4'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali modalità si fa riferimento' name = 'note_7' id ='note_7'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -424,9 +424,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_13' id ='note_13'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -439,9 +437,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_14' id ='note_14'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -454,9 +450,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_15' id ='note_15'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "<td rowspan = '10'>
@@ -485,8 +479,8 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_16' id ='note_16'></textarea>
+            <td rowspan = '4'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali interventi si fa riferimento' name = 'note_8' id ='note_8'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -500,9 +494,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_17' id ='note_17'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -515,9 +507,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_18' id ='note_18'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -530,9 +520,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_19' id ='note_19'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -546,7 +534,8 @@ function surveyForm(){
                 L’azienda ha avviato i seguenti programmi:                 
             </td>
             <td>
-                partecipazione a formazione esterna, seminari, corsi c) moduli di e-learning
+                a) partecipazione a formazione esterna, seminari, corsi <br>
+                c) moduli di e-learning
             </td>
             <td>
                 <select name='select_20'>
@@ -554,15 +543,15 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_20' id ='note_20'></textarea>
+            <td rowspan = '6'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' name = 'note_9' id ='note_9'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
             echo "
             <td>
-                partecipazione a incontri esterni di sensibilizzazione, scambi 
-                di esperienze d) organizzazione per tutto il personale di eventi di sensibilizzazione
+                b) partecipazione a incontri esterni di sensibilizzazione, scambi di esperienze <br>
+                d) organizzazione per tutto il personale di eventi di sensibilizzazione
             </td>
             <td>
                 <select name='select_21'>
@@ -570,14 +559,12 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_21' id ='note_21'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
             <td>
-                gruppi di lavoro tematici, laboratori formativi per manager
+                e) gruppi di lavoro tematici, laboratori formativi per manager
             </td>
             <td>
                 <select name='select_22'>
@@ -585,15 +572,27 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_22' id ='note_22'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
             <td>
-                approfondimenti su come gestire praticamente problematiche e situazioni 
-                legate ai temi D&I h) aspetti specifici di discriminazione relativi a: 
+                f) introduzione di temi generali come rischi legali, vantaggi e sfide della D&I
+            </td>
+            <td>
+                <select name='select_24'>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>
+            </td>
+            ";
+        echo "</tr>";
+        echo "<tr>";
+            echo "
+            <td>
+                g) approfondimenti su come gestire praticamente problematiche e situazioni 
+                legate ai temi D&I <br>
+                h) aspetti specifici di discriminazione relativi a: 
                     disabilità, genere, età, origine etnica, orientamento sessuale
             </td>
             <td>
@@ -602,29 +601,13 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_23' id ='note_23'></textarea>
-            </td>";
+            ";
         echo "</tr>";
+        
         echo "<tr>";
             echo "
             <td>
-                introduzione di temi generali come rischi legali, vantaggi e sfide della D&I
-            </td>
-            <td>
-                <select name='select_24'>
-                    <option value='yes'>Yes</option>
-                    <option value='no'>No</option>
-                </select>
-            </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_24' id ='note_24'></textarea>
-            </td>";
-        echo "</tr>";
-        echo "<tr>";
-            echo "
-            <td>
-                altro (specificare in Note)
+                i) altro (specificare in Note)
             </td>
             <td>
                 <select name='select_25'>
@@ -632,9 +615,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_25' id ='note_25'></textarea>
-            </td>";
+            ";
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -657,8 +638,8 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_26' id ='note_26'></textarea>
+            <td rowspan = '5'>
+                <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_10' id ='note_10'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -681,9 +662,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_27' id ='note_27'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -703,9 +682,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_28' id ='note_28'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -724,9 +701,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_29' id ='note_29'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -739,9 +714,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_30' id ='note_30'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -763,8 +736,8 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_31' id ='note_31'></textarea>
+            <td rowspan = '2'>
+                <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_11' id ='note_11'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -787,9 +760,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_32' id ='note_32'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -819,7 +790,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_33' id ='note_33'></textarea>
+                <textarea rows='4' placeholder='Specificare a quale delle opzioni indicate si fa riferimento.' name = 'note_12' id ='note_12'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -836,8 +807,9 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_34' id ='note_34'></textarea>
+            <td rowspan = '6'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' 
+                name = 'note_13' id ='note_13'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -851,9 +823,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_36' id ='note_36'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -866,9 +836,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_36' id ='note_36'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -881,9 +849,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_37' id ='note_37'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -896,9 +862,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_38' id ='note_38'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -911,9 +875,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_39' id ='note_39'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -936,8 +898,8 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_40' id ='note_40'></textarea>
+            <td rowspan = '9'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' name = 'note_14' id ='note_14'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -951,9 +913,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_41' id ='note_41'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -966,9 +926,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_42' id ='note_42'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -981,9 +939,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_43' id ='note_43'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -996,9 +952,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_44' id ='note_44'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1011,9 +965,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_45' id ='note_45'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1026,9 +978,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_46' id ='note_46'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1041,9 +991,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_47' id ='note_47'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1056,9 +1004,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_48' id ='note_48'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1081,8 +1027,8 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_49' id ='note_49'></textarea>
+            <td rowspan = '5'>
+                <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' name = 'note_15' id ='note_15'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -1096,9 +1042,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_50' id ='note_50'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1111,9 +1055,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_51' id ='note_51'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1126,9 +1068,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_52' id ='note_52'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "
@@ -1141,9 +1081,7 @@ function surveyForm(){
                     <option value='no'>No</option>
                 </select>
             </td>
-            <td>
-                <textarea rows='4' placeholder='Note' name = 'note_53' id ='note_53'></textarea>
-            </td>";      
+            ";      
         echo "</tr>";
         echo "<tr>";
             echo "<td rowspan = '2'>
@@ -1175,7 +1113,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_54' id ='note_54'></textarea>
+                <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate, se si è scelto `altro`, indicare esplicitamente a quale strumento si fa riferimento' name = 'note_16' id ='note_16'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -1194,7 +1132,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                    <textarea rows='4' placeholder='Note' name = 'note_55' id ='note_55'></textarea>
+                    <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate,se si è scelto `altro`, indicare esplicitamente cosa viene comunicato' name = 'note_17' id ='note_17'></textarea>
             </td>";
         echo "</tr>";
         echo "<tr>";
@@ -1227,7 +1165,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_56' id ='note_56'></textarea>
+                <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate, se si è scelto `altro`, indicare esplicitamente a quale strumento si fa riferimento' name = 'note_18' id ='note_18'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
@@ -1252,7 +1190,7 @@ function surveyForm(){
                 </select>
             </td>
             <td>
-                <textarea rows='4' placeholder='Note' name = 'note_57' id ='note_57'></textarea>
+                <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate,se si è scelto `altro`, indicare esplicitamente a cosa si fa riferimento' name = 'note_19' id ='note_19'></textarea>
             </td>";      
         echo "</tr>";
         echo "<tr>";
