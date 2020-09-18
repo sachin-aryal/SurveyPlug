@@ -21,7 +21,6 @@ require_once(ABSPATH . 'wp-config.php');
 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/util/install.php');
 require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/util/form_render.php');
-require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/util/form_rendering.php');
 
 add_action("wp_enqueue_scripts","render_css");
 add_action("admin_menu", "addMenu");
