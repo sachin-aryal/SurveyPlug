@@ -1,0 +1,30 @@
+#table-2 {
+    border-collapse: collapse;
+    padding: 15px;
+    margin: 30px 10px 10px;
+}
+#table-1{
+    padding: 25PX;
+}
+#table-2 td {
+    border: 1px solid #333;
+    padding: 5px;
+}
+#table-1 th{
+    float: left;
+}
+#table-1 select, #table-1 input[type='text'], #table-1 input[type='date'], #table-1 textarea{
+  width:100%;
+  box-sizing:border-box;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+caption{
+    padding: 20px;
+    font-size: 20px;
+}
+#table-1 textarea::placeholder {
+      color: #444;
+      text-align: center;
+      overflow: hidden;
+}
