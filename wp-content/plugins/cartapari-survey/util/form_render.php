@@ -14,11 +14,37 @@ function surveyForm(){
                 width: 100% !important;
                 font-size: 12px !important;
             }
-            .table tbody tr td{
-                width : 15% !important;
-                font-size: 12px !important;
-
+            #table-2 {
+                border-collapse: collapse !important;
+                padding: 15px !important;
+                margin: 30px 10px 10px !important;
             }
+            #table-1{
+                padding: 25PX !important;
+            }
+            #table-2 td {
+                border: 1px solid #333 !important;
+                padding: 5px !important;
+            }
+            #table-1 th{
+                float: left !important;
+            }
+            #table-1 select, #table-1 input[type='text'], #table-1 input[type='date'], #table-1 textarea{
+              width:100% !important;
+              box-sizing:border-box !important;
+              margin-left: 20px !important;
+              margin-top: 5px !important;
+            }
+            caption{
+                padding: 20px !important;
+                font-size: 20px !important;
+            }
+            #table-1 textarea::placeholder {
+                  color: #444 !important;
+                  text-align: center !important;
+                  overflow: hidden !important;
+            }
+            
         
         </style>";
         echo "<form action = '".plugins_url( '/form_render_submit.php', __FILE__ )."' method = 'post' id = 'form_render_id' class = 'form-design'>";
@@ -78,7 +104,7 @@ function surveyForm(){
         echo "</tbody>";
         echo "</table>";
 
-        echo "<table>";
+        echo "<table id = 'table-2'>";
         echo "<thead><th>AZIONE</th><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>ANSWER</th><th>Note</th></thead>";
         echo "<tbody>";
         echo "<tr>";
