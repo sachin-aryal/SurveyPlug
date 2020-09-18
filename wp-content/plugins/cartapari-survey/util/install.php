@@ -12,7 +12,7 @@ function create_wp_survey_answer_table() {
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
           `id` bigint(20) NOT NULL AUTO_INCREMENT,
           `answer` varchar(5) NOT NULL,
-          `note` int(11) DEFAULT NULL,
+          `note` text DEFAULT NULL,
           `question_id` int(11) NOT NULL,
           `user_id` bigint(20) unsigned DEFAULT NULL,
           PRIMARY KEY (`id`),
