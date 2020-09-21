@@ -73,7 +73,7 @@ function surveyForm(){
             
         
         </style>";
-        echo "<form action = '".plugins_url( '/form_render_submit.php', __FILE__ )."' method = 'post' id = 'form_render_id' class = 'form-design'>";
+        echo "<form action = '".esc_attr('admin-post.php')."' method = 'post' id = 'form_render_id' class = 'form-design'>";
         echo "<table id='table-1'>";
         echo "<caption>COMPANY DATA</caption></hr>";
         echo "<tbody>";
@@ -85,9 +85,9 @@ function surveyForm(){
                 <th>TIPOLOGIA ORGANIZZAZIONE</th>
                 <td>
                 <select name='company_data' required='required'>
-                    <option value='1'>IMPRESA-ASSOCIAZIONE IMPRENDITORIALE</option>
-                    <option value='2'>ENTE PUBBLICO</option>
-                    <option value='3'>TERZO SETTORE E SOCIETA' CIVILE</option>
+                    <option value='IMPRESA-ASSOCIAZIONE IMPRENDITORIALE'>IMPRESA-ASSOCIAZIONE IMPRENDITORIALE</option>
+                    <option value='ENTE PUBBLICO'>ENTE PUBBLICO</option>
+                    <option value='TERZO SETTORE E SOCIETA'>TERZO SETTORE E SOCIETA' CIVILE</option>
                 </select>
                 </td>
             </tr>";
@@ -105,12 +105,12 @@ function surveyForm(){
                 <th>NUMBER OF EMPLOYEES</th>
                 <td>
                 <select name='no_of_employee' required='required'>
-                    <option value='1'>0-10</option>
-                    <option value='2'>11-50</option>
-                    <option value='3'>51-250</option>
-                    <option value='4'>251-1000</option>
-                    <option value='5'>1001-5000</option>
-                    <option value='6'>Oltre 5000</option>
+                    <option value='0-10'>0-10</option>
+                    <option value='11-50'>11-50</option>
+                    <option value='51-250'>51-250</option>
+                    <option value='251-1000'>251-1000</option>
+                    <option value='1001-5000'>1001-5000</option>
+                    <option value='Oltre 5000'>Oltre 5000</option>
                 </select>
                 </td>
             </tr>";
@@ -1209,7 +1209,7 @@ function surveyForm(){
                 Donne
             </td>
             <td rowspan = '8' colspan = '2'>
-                <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'comments' id ='comments'></textarea>
+                <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_20' id ='comments'></textarea>
             </td>";  
         echo "</tr>";
         echo "<tr>";
@@ -1256,6 +1256,7 @@ function surveyForm(){
         echo "</tr>";
         echo "</tbody>";
         echo "</table>";
+        echo "<input type = 'hidden' name = 'action' value = 'test'>";
         echo "<button type='submit' name = 'submit'>Submit</button>";
         echo "</form>";
 }
