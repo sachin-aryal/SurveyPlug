@@ -23,7 +23,7 @@ function form_render_save(){
     $rating = calculateRating();
     if($lastid != 0){
         save_partial_rating($wpdb, $lastid, $rating[0]);
-        save_partial_rating($wpdb, $lastid, $rating[1]);
+        save_total_rating($wpdb, $lastid, $rating[1]);
         save_note($wpdb, $lastid);
     }
     
