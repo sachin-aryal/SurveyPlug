@@ -97,6 +97,12 @@ function create_wp_partial_rating_table(){
     dbDelta( $sql );
  }
 
+ function drop_table_note(){
+    global $wpdb;
+    $sql = "DROP TABLE IF EXISTS ".$wpdb->prefix."note;";
+    $wpdb->query($sql);
+ }
+
 function drop_table_survey_answer(){
     global $wpdb;
     $sql = "DROP TABLE IF EXISTS ".$wpdb->prefix."survey_answer;";
@@ -126,6 +132,7 @@ function drop_tables(){
     drop_table_survey_answer();
     drop_table_partial_rating();
     drop_table_total_rating();
+    drop_table_note();
     drop_table_company_info();
 }
 

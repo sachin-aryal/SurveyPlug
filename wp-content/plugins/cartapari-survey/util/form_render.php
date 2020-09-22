@@ -73,7 +73,7 @@ function surveyForm(){
             
         
         </style>";
-        echo "<form action = '".esc_attr('admin-post.php')."' method = 'post' id = 'form_render_id' class = 'form-design'>";
+        echo "<form action = '".admin_url('admin-post.php')."' method = 'post' id = 'form_render_id' class = 'form-design'>";
         echo "<table id='table-1'>";
         echo "<caption>COMPANY DATA</caption></hr>";
         echo "<tbody>";
@@ -580,7 +580,7 @@ function surveyForm(){
                 f) introduzione di temi generali come rischi legali, vantaggi e sfide della D&I
             </td>
             <td>
-                <select name='select_24'>
+                <select name='select_23'>
                     <option value='yes'>Yes</option>
                     <option value='no'>No</option>
                 </select>
@@ -596,7 +596,7 @@ function surveyForm(){
                     disabilità, genere, età, origine etnica, orientamento sessuale
             </td>
             <td>
-                <select name='select_23'>
+                <select name='select_24'>
                     <option value='yes'>Yes</option>
                     <option value='no'>No</option>
                 </select>
@@ -1256,7 +1256,7 @@ function surveyForm(){
         echo "</tr>";
         echo "</tbody>";
         echo "</table>";
-        echo "<input type = 'hidden' name = 'action' value = 'test'>";
+        echo "<input type = 'hidden' name = 'action' value = 'form_render_save'>";
         echo "<button type='submit' name = 'submit'>Submit</button>";
         echo "</form>";
 }
