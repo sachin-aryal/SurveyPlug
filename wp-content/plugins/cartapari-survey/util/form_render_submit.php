@@ -25,11 +25,25 @@ function form_render_save(){
         save_partial_rating($wpdb, $lastid, $rating[0]);
         save_total_rating($wpdb, $lastid, $rating[1]);
         save_note($wpdb, $lastid);
+        save_survey_answer($wpdb, $lastid);
     }
     
 }
 
 add_action("admin_post_form_render_save","form_render_save");
+
+function save_survey_answer($wpdb, $lastid){
+    $table_name = $wpdb->prefix . 'survey_answer';
+    $query = "INSERT INTO `$table_name` (`answer`, `question_id`, `company_id`)
+        VALUES ('%s','%d', '%d')";
+    foreach($_POST as $key => $value){
+        $select = explode('_',$key);
+        if(($select[0] == 'select')){            
+            $sql = $wpdb->prepare($query, $value, $select[1], $lastid);
+            $wpdb->query($sql);
+        }       
+    }
+}
 
 function save_partial_rating($wpdb, $lastid, $partial_rating){
     $table_name = $wpdb->prefix . 'partial_rating';
