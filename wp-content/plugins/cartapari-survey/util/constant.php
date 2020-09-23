@@ -81,6 +81,7 @@ $table_name_mapping = array(
     "partial_rating" => $wpdb->prefix . 'survey_partial_rating',
     "total_rating" => $wpdb->prefix . 'survey_total_rating',
     "question_note" => $wpdb->prefix . 'question_note',
+    "users" => $wpdb->prefix . 'users',
 );
 
 function calculateRating(){

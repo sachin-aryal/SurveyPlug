@@ -11,13 +11,14 @@ function form_render_save(){
     $author = $_POST['author'];
     $author_email = $_POST['author_email'];
     $issued_date = $_POST['issued_date'];
+    $user_id = get_current_user_id();
     
     $query = "INSERT INTO `$company_table` 
-                (`company_name`,`company_data`,`sector`,`no_of_employee`,`state`,`author`,`author_email`,`issue_date`)
-                VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+                (`company_name`,`company_data`,`sector`,`no_of_employee`,`state`,`author`,`author_email`,`issue_date`, `user_id`)
+                VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d')";
 
 
-    $sql = $wpdb->prepare($query,$company_name,$company_data,$sector,$no_of_employee,$state,$author,$author_email,$issued_date);
+    $sql = $wpdb->prepare($query,$company_name,$company_data,$sector,$no_of_employee,$state,$author,$author_email,$issued_date, $user_id);
     $wpdb->query($sql);
     $lastid = $wpdb->insert_id;
     $rating = calculateRating();

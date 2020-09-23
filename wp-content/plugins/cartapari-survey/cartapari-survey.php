@@ -43,10 +43,7 @@ function cartapariSurvey(){
 }
 
 function exportCartapariSurveyData(){
-    echo "Exporting..";
     surveyForm();
-    //createRequiredTables();
-
 }
 
 register_activation_hook( __FILE__, 'createRequiredTables' );

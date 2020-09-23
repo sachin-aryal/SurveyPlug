@@ -6,9 +6,11 @@ $survey_db_version = '1.0';
 function create_wp_company_info_table($table_name_mapping){
     global $wpdb;
     $table_name = $table_name_mapping["company_info"];
+    $users_table = $table_name_mapping["users"];
     $charset_collate = $wpdb->get_charset_collate();
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
      `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+     `user_id` bigint(20) UNSIGNED NOT NULL,
      `company_name` varchar(100) NOT NULL,
      `company_data` varchar(50) NOT NULL,
      `sector` varchar(50) NOT NULL,
@@ -17,7 +19,9 @@ function create_wp_company_info_table($table_name_mapping){
      `author` varchar(50) NOT NULL,
      `author_email` varchar(50) NOT NULL,
      `issue_date` date NOT NULL,
-     PRIMARY KEY (`id`)
+     PRIMARY KEY (`id`),
+     KEY `fk_company_info_user_id` (`user_id`),
+     CONSTRAINT `fk_company_info_user_id` FOREIGN KEY (`user_id`) REFERENCES $users_table (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
    )$charset_collate";
     dbDelta( $sql );
 }
@@ -49,7 +53,7 @@ function create_wp_partial_rating_table($table_name_mapping){
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
      `id` bigint(20) NOT NULL AUTO_INCREMENT,
      `partial_id` int NOT NULL,
-     `survey_partial_rating` varchar(100) NOT NULL,
+     `survey_partial_rating` int NOT NULL,
      `company_id` bigint(20) unsigned DEFAULT NULL,
      PRIMARY KEY (`id`),
      KEY `fk_partial_rating_company_id` (`company_id`),
@@ -66,7 +70,7 @@ function create_wp_partial_rating_table($table_name_mapping){
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
      `id` bigint(20) NOT NULL AUTO_INCREMENT,
      `total_id` int NOT NULL,
-     `survey_total_rating` varchar(100) NOT NULL,
+     `survey_total_rating` int NOT NULL,
      `company_id` bigint(20) unsigned DEFAULT NULL,
      PRIMARY KEY (`id`),
      KEY `fk_total_rating_company_id` (`company_id`),
@@ -83,7 +87,7 @@ function create_wp_partial_rating_table($table_name_mapping){
     $sql = "CREATE TABLE IF NOT EXISTS $table_name (
      `id` bigint(20) NOT NULL AUTO_INCREMENT,
      `note_id` int NOT NULL,
-     `survey_question_note` varchar(100) NOT NULL,
+     `survey_question_note` varchar(500) NOT NULL,
      `company_id` bigint(20) unsigned DEFAULT NULL,
      PRIMARY KEY (`id`),
      KEY `fk_note_company_id` (`company_id`),
