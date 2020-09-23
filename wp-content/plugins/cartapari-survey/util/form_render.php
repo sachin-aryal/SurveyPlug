@@ -165,8 +165,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_1'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -188,8 +188,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_2'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -223,8 +223,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_3'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -246,8 +246,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_4'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -272,8 +272,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_5'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '2'>
@@ -295,8 +295,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_6'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>";
         echo "</tr>";
@@ -324,8 +324,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_7'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '5'>
@@ -340,8 +340,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_8'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -353,8 +353,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_9'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -366,8 +366,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_10'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -379,8 +379,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_11'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -405,8 +405,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_12'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '4'>
@@ -420,8 +420,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_13'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -433,8 +433,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_14'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -446,8 +446,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_15'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -475,8 +475,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_16'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '4'>
@@ -490,8 +490,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_17'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -503,8 +503,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_18'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -516,8 +516,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_19'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -539,8 +539,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_20'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '6'>
@@ -555,8 +555,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_21'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -568,8 +568,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_22'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -581,8 +581,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_23'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -597,8 +597,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_24'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -611,8 +611,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_25'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -634,8 +634,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_26'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '5'>
@@ -658,8 +658,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_27'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -678,8 +678,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_28'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -697,8 +697,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_29'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -710,8 +710,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_30'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -732,8 +732,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_31'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '2'>
@@ -756,8 +756,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_32'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -785,8 +785,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_33'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -803,8 +803,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_34'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '6'>
@@ -819,8 +819,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_35'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -832,8 +832,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_36'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -845,8 +845,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_37'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -858,8 +858,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_38'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -871,8 +871,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_39'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -894,8 +894,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_40'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '9'>
@@ -909,8 +909,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_41'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -922,8 +922,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_42'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -935,8 +935,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_43'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -948,8 +948,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_44'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -961,8 +961,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_45'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -974,8 +974,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_46'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -987,8 +987,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_47'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -1000,8 +1000,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_48'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -1023,8 +1023,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_49'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '5'>
@@ -1038,8 +1038,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_50'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -1051,8 +1051,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_51'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -1064,8 +1064,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_52'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -1077,8 +1077,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_53'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";      
@@ -1108,8 +1108,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_54'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -1127,8 +1127,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_55'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -1160,8 +1160,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_56'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -1185,8 +1185,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_57'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td>
@@ -1210,8 +1210,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_58'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             <td rowspan = '8'>
@@ -1224,8 +1224,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_59'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -1236,8 +1236,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_60'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -1248,8 +1248,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_61'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -1260,8 +1260,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_62'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -1272,8 +1272,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_63'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -1284,8 +1284,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_64'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
@@ -1296,8 +1296,8 @@ function surveyForm(){
             </td>
             <td>
                 <select name='select_65'>
-                    <option value='si'>SI</option>
-                    <option value='no'>NO</option>
+                    <option value='SI'>SI</option>
+                    <option value='NO'>NO</option>
                 </select>
             </td>
             ";
