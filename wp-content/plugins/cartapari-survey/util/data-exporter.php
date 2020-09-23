@@ -1,73 +1,16 @@
 <?php
 require_once('constant.php');
+require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/vendor/autoload.php');
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-function export(){
+function exportReportFile(){
+    if(!isset($_POST['download_excel_report'])){
+        return;
+    }
     global $table_name_mapping;
-    echo "<style>
-            table{
-                font-size: 12px !important;
-            }
-            .form-design{
-                max-width: 98% !important;
-                width: 98% !important;
-                font-size: 12px !important;
-            }
-            #table-2 {
-                border-collapse: collapse !important;
-                padding: 15px !important;
-                margin: 30px 10px 10px !important;
-            }
-            #table-1{
-                width: 50% !important;
-                padding: 25PX !important;
-                border: 0px;
-            }
-            #table-1 th{
-                border: 0px !important;
-            }
-            #table-1 td, #table-1 th{
-                border: 0px !important;
-                padding-right: 20px !important;
-            }
-            #table-2 td{
-                border: 1px solid #333 !important;
-                padding: 5px !important;
-                font-size: 12px;
-                width: 10% !important;
-            }
-            #table-1 th{
-            border: 1px solid #333 !important;
-                padding: 5px !important;
-                font-size: 12px;
-                width: 10% !important;
-            }
-            #table-1 select, #table-1 input[type='text'], #table-1 input[type='date'], #table-1 textarea, #table-1 input[type='email']{
-              width:100% !important;
-              box-sizing:border-box !important;
-              margin-left: 20px !important;
-              margin-top: 5px !important;
-            }
-            caption{
-                padding: 20px !important;
-                font-size: 20px !important;
-            }
-            #table-1 textarea::placeholder {
-                  color: #444 !important;
-                  text-align: center !important;
-                  overflow: hidden !important;
-                  font-size: 12px !important;
-            }
-            #table-2 textarea::placeholder {
-                text-align: center !important;
-                font-size: 12px !important;
-                line-height: 1em !important;
-                text-align: center !important;
-          }
-            
-        
-        </style>";
     global $wpdb, $question_answer_mapping, $question_map, $index_to_partial_rating, $index_to_total_rating, $index_to_note;
-    $result = $wpdb->get_results ( "SELECT * FROM  ".$wpdb->prefix."survey_company_info");
+    $result = $wpdb->get_results ( "SELECT * FROM  ".$table_name_mapping["company_info"]);
     $header = array("DATI ANAGRIFICI, DOMANDE, PUNTEGGI E NOTE", "NOME AZIENDA", "TIPOLOGIA DI ORGANIZZAZIONE");
     foreach ($question_map as $questions){
         foreach ($questions as $each_question){
@@ -107,6 +50,7 @@ function export(){
     array_push($header, "Target Diversity&Inclusion - Altro (specificare in Note)");
     array_push($header, "Commento libero non obbligatorio");
     $final_rows = array();
+    array_push($final_rows, $header);
     foreach ( $result as $company )
     {
         $csv_rows = array();
@@ -155,18 +99,25 @@ function export(){
         array_push($final_rows, $csv_rows);
 
     }
-    echo "<table id='table-2'>";
-    echo "<tr>";
-    foreach ($header as $hd){
-        echo "<td>$hd</td>";
-    }
-    echo "</tr>";
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setCellValue('A1', 'Data Sheet');
+    $rowIndex = 1;
     foreach ($final_rows as $row){
-        echo "<tr>";
-        foreach($row as $td){
-            echo "<td>$td</td>";
+        $columnIndex = 0;
+        foreach($row as $cell){
+            $sheet->setCellValueByColumnAndRow($columnIndex, $rowIndex, $cell);
+            $columnIndex += 1;
         }
-        echo "</tr>";
+        $rowIndex += 1;
     }
-    echo "</table>";
+
+    $writer = new Xlsx($spreadsheet);
+    $file_path = ABSPATH. 'wp-content/plugins/cartapari-survey/data_'.date("Ymd").'.xlsx';
+    $writer->save($file_path);
+    $content = file_get_contents($file_path);
+    header("Content-Disposition: attachment; filename=data_".date("Ymd").'.xlsx');
+    unlink($file_path);
+    exit($content);
 }
+add_action('admin_init','exportReportFile');

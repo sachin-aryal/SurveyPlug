@@ -74,7 +74,7 @@ $question_answer_mapping = array(
 );
 $index_to_partial_rating = array(1, 2, 3, 4, 5, 6, 11, 15, 19, 25, 26, 27, 28, 30, 31, 32, 39, 48, 53, 54, 55, 56, 57);
 $index_to_total_rating = array(2, 4, 6, 15, 25, 30, 32, 53, 55, 57);
-$index_to_note = array(1, 2, 3, 4, 6, 11, 15, 19, 25, 30, 32, 33, 39, 48, 53, 54, 55, 56, 57);
+$index_to_note = array(1, 2, 3, 4, 6, 11, 15, 19, 25, 30, 32, 33, 39, 48, 53, 54, 55, 56, 57, 65);
 $table_name_mapping = array(
     "survey_answer" => $wpdb->prefix . 'survey_answer',
     "company_info" => $wpdb->prefix . 'survey_company_info',
