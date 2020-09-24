@@ -1,6 +1,7 @@
 <?php
 require_once('constant.php');
 function form_render_save(){
+    echo "testing";
     global $wpdb, $table_name_mapping;
     $company_table = $table_name_mapping["company_info"];
     $company_name = $_POST['company_name'];
@@ -27,7 +28,10 @@ function form_render_save(){
         save_partial_rating($wpdb, $lastid, $rating[0], $table_name_mapping);
         save_total_rating($wpdb, $lastid, $rating[1], $table_name_mapping);
         save_note($wpdb, $lastid, $table_name_mapping);
+        create_total_rating_pdf($rating[1]);   
     }
+    $location = $_SERVER["HTTP_REFERER"];
+    wp_safe_redirect($location);
     
 }
 
@@ -77,5 +81,9 @@ function save_note($wpdb, $lastid, $table_name_mapping){
             $wpdb->query($sql);
         }       
     }
+}
+
+function create_total_rating_pdf($total_rating){
+    echo "test";
 }
 ?>
