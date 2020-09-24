@@ -28,23 +28,22 @@ add_action("wp_enqueue_scripts","render_css");
 add_action("admin_menu", "addMenu");
 function addMenu(){
     add_menu_page("CartaPari Survey", "CartaPari Survey", "edit_pages", "cartapari-survey", "cartapariSurvey");
-    add_submenu_page("cartapari-survey", "Export Data", "Survey Form", "edit_pages", "cartapari-survey-export", "exportCartapariSurveyData");
+//    add_submenu_page("cartapari-survey", "Export Data", "Survey Form", "edit_pages", "cartapari-survey-export", "exportCartapariSurveyData");
 }
 
 function cartapariSurvey(){
-    echo '<div id="treecontrol" style="margin:20px 0;position:relative;">
+    echo '
+    <div id="treecontrol" style="width: 80%;margin: 30px auto;">
     <form method="post" id="download_form" action="">
     <input type="submit" name="download_excel_report" class="button-primary" value="Download Report" />
     </form>
     </div>';
-//    drop_tables();
-    createRequiredTables();
-    //drop_tables();
+    require_once('util/_chart.php');
 }
 
-function exportCartapariSurveyData(){
-    surveyForm();
-}
+//function exportCartapariSurveyData(){
+//    surveyForm();
+//}
 
 register_activation_hook( __FILE__, 'createRequiredTables' );
 register_deactivation_hook( __FILE__, 'drop_tables' );

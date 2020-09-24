@@ -1,23 +1,31 @@
 <?php
 require_once 'helper.php';
 require_once('constant.php');
+global $wpdb, $table_name_mapping;
 
-$company_id = $row -> id;
-$company_type = $row -> company_type;
-$no_of_employee = $row -> no_of_employee;
+$user = wp_get_current_user();
+if ( in_array( 'administrator', (array) $user->roles ) ) {
+    $my_data_points = array();
+    $best_ratings = get_best_rating($wpdb, $table_name_mapping["total_rating"], null);
+    $average_ratings = get_average_rating($wpdb, $table_name_mapping["total_rating"], null);
+}else{
+    $company_id = $row -> id;
+    $company_type = $row -> company_type;
+    $no_of_employee = $row -> no_of_employee;
 
-$my_ratings = get_my_rating($wpdb, $company_id, $table_name_mapping["total_rating"]);
-$companies = get_related_company_ids($wpdb, $table_name_mapping["company_info"], $company_type, $no_of_employee);
-$company_ids = array();
-foreach ($companies as $company){
-    array_push($company_ids, $company->id);
-}
-$company_ids = join("','",$company_ids);
-$best_ratings = get_best_rating($wpdb, $table_name_mapping["total_rating"], $company_ids);
-$average_ratings = get_average_rating($wpdb, $table_name_mapping["total_rating"], $company_ids);
-$my_data_points = array();
-foreach($my_ratings as $index=>$my_rating){
-    array_push($my_data_points, array("label" => $index+1, "y"=> (int)$my_rating->survey_total_rating));
+    $my_ratings = get_my_rating($wpdb, $company_id, $table_name_mapping["total_rating"]);
+    $companies = get_related_company_ids($wpdb, $table_name_mapping["company_info"], $company_type, $no_of_employee);
+    $company_ids = array();
+    foreach ($companies as $company){
+        array_push($company_ids, $company->id);
+    }
+    $company_ids = join("','",$company_ids);
+    $best_ratings = get_best_rating($wpdb, $table_name_mapping["total_rating"], $company_ids);
+    $average_ratings = get_average_rating($wpdb, $table_name_mapping["total_rating"], $company_ids);
+    $my_data_points = array();
+    foreach($my_ratings as $index=>$my_rating){
+        array_push($my_data_points, array("label" => $index+1, "y"=> (int)$my_rating->survey_total_rating));
+    }
 }
 $best_data_points = array();
 foreach($best_ratings as $index=>$best_rating){
@@ -45,7 +53,7 @@ foreach($average_ratings as $index=>$average_rating){
                 lineColor: "#4F81BC",
                 labelFontColor: "#4F81BC",
                 tickColor: "#4F81BC",
-                maximum: 101
+                maximum: 110
             },
             toolTip: {
                 shared: true
@@ -59,14 +67,14 @@ foreach($average_ratings as $index=>$average_rating){
                     showInLegend: true,
                     dataPoints:my_data_points
                 }, {
-                    color: "#504E64",
+                    color: "#2589d7",
                     type: "column",
                     name: "Punteggio Best In Class",
                     legendText: "Punteggio Best In Class",
                     showInLegend: true,
                     dataPoints:best_data_points
                 }, {
-                    color: "blue",
+                    color: "#bbc3c6",
                     type: "spline",
                     name: "Punteggio Medio",
                     legendText: "Punteggio Medio",
