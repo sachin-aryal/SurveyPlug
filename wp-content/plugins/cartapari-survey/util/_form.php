@@ -82,7 +82,7 @@ echo "<table id='table-1'>";
     echo "<tr>
         <th>TIPOLOGIA ORGANIZZAZIONE</th>
         <td>
-            <select name='company_data' required='required'>
+            <select name='company_type' required='required'>
                 <option value='IMPRESA-ASSOCIAZIONE IMPRENDITORIALE'>IMPRESA-ASSOCIAZIONE IMPRENDITORIALE</option>
                 <option value='ENTE PUBBLICO'>ENTE PUBBLICO</option>
                 <option value='TERZO SETTORE E SOCIETA'>TERZO SETTORE E SOCIETA' CIVILE</option>

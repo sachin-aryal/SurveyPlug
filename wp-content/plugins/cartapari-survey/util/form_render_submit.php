@@ -1,11 +1,13 @@
 <?php
 require_once('constant.php');
+require_once('helper.php');
+
 function form_render_save(){
     echo "testing";
     global $wpdb, $table_name_mapping;
     $company_table = $table_name_mapping["company_info"];
     $company_name = $_POST['company_name'];
-    $company_data = $_POST['company_data'];
+    $company_type = $_POST['company_type'];
     $sector = $_POST['sector'];
     $no_of_employee = $_POST['no_of_employee'];
     $state = $_POST['state'];
@@ -15,11 +17,11 @@ function form_render_save(){
     $user_id = get_current_user_id();
     
     $query = "INSERT INTO `$company_table` 
-                (`company_name`,`company_data`,`sector`,`no_of_employee`,`state`,`author`,`author_email`,`issue_date`, `user_id`)
+                (`company_name`,`company_type`,`sector`,`no_of_employee`,`state`,`author`,`author_email`,`issue_date`, `user_id`)
                 VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d')";
 
 
-    $sql = $wpdb->prepare($query,$company_name,$company_data,$sector,$no_of_employee,$state,$author,$author_email,$issued_date, $user_id);
+    $sql = $wpdb->prepare($query,$company_name,$company_type,$sector,$no_of_employee,$state,$author,$author_email,$issued_date, $user_id);
     $wpdb->query($sql);
     $lastid = $wpdb->insert_id;
     $rating = calculateRating();

@@ -12,7 +12,7 @@ function create_wp_company_info_table($table_name_mapping){
      `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
      `user_id` bigint(20) UNSIGNED NOT NULL,
      `company_name` varchar(100) NOT NULL,
-     `company_data` varchar(50) NOT NULL,
+     `company_type` varchar(50) NOT NULL,
      `sector` varchar(50) NOT NULL,
      `no_of_employee` varchar(20) NOT NULL,
      `state` varchar(3) NOT NULL,
@@ -137,7 +137,15 @@ function drop_tables(){
 }
 
 function createRequiredTables(){
-    global $table_name_mapping;
+    global $wpdb;
+    $table_name_mapping = array(
+        "survey_answer" => $wpdb->prefix . 'survey_answer',
+        "company_info" => $wpdb->prefix . 'survey_company_info',
+        "partial_rating" => $wpdb->prefix . 'survey_partial_rating',
+        "total_rating" => $wpdb->prefix . 'survey_total_rating',
+        "question_note" => $wpdb->prefix . 'question_note',
+        "users" => $wpdb->prefix . 'users',
+    );
     create_wp_company_info_table($table_name_mapping);
     create_wp_survey_answer_table($table_name_mapping);
     create_wp_partial_rating_table($table_name_mapping);

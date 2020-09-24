@@ -57,7 +57,7 @@ function exportReportFile(){
         array_push($csv_rows, "COMPILATORE");
         $company_id = $company ->id;
         $company_name = $company -> company_name;
-        $company_type = $company -> company_data;
+        $company_type = $company -> company_type;
         array_push($csv_rows, $company_name);
         array_push($csv_rows, $company_type);
         $answers = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["survey_answer"]." WHERE company_id=$company_id ORDER BY question_id ASC");
