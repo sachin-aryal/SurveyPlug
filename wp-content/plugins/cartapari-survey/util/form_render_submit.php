@@ -3,7 +3,6 @@ require_once('constant.php');
 require_once('helper.php');
 
 function form_render_save(){
-    echo "testing";
     global $wpdb, $table_name_mapping;
     $company_table = $table_name_mapping["company_info"];
     $company_name = $_POST['company_name'];
@@ -88,4 +87,50 @@ function save_note($wpdb, $lastid, $table_name_mapping){
 function create_total_rating_pdf($total_rating){
     echo "test";
 }
+
+
+function createImage($wpdb, $company_id, $total_rating_table){
+    $my_ratings = get_my_rating($wpdb, $company_id, $total_rating_table);
+    $total = 0;
+    foreach ($my_ratings as $my_rating){
+        $total += $my_rating->survey_total_rating;
+    }
+    $average = $total/sizeof($my_ratings);
+
+    // Create an image of given size
+    $width = 1300;
+    $height = 450;
+    $image = imagecreatetruecolor($width, $height);
+    $white = imagecolorallocate($image, 255, 255, 255);
+    $black = imagecolorallocate($image, 0, 0, 0);
+    $font_path = 'arial.ttf';
+
+    // Draw the rectangle of green color
+    imagefilledrectangle($image, 0, 0, $width, $height, $white);
+    imagerectangle($image, 20, 100, $width-20, 200, $black);
+    imagettftext($image, 14, 0, 550, 150, $black, $font_path, "Punteggio Generale");
+    imagettftext($image, 14, 0, 610, 180, $black, $font_path, "$average%");
+    $index = 1;
+    foreach ($my_ratings as $best_rating){
+        $x1 = 127*($index-1);
+        if($index == 1){
+            $x1 = 20;
+        }else{
+            $x1 += 20;
+        }
+        $x2 = $x1+110;
+        if($index == 10){
+            $x2 = 1280;
+        }
+        imagerectangle($image, $x1, 230, $x2, 300, $black);
+        imagettftext($image, 14, 0, $x1+9, 270, $black, $font_path, "Section - $index");
+        imagettftext($image, 14, 0, $x1+40, 292, $black, $font_path, "$best_rating->survey_total_rating%");
+        $index += 1;
+    }
+    # TODO:Convert this image to pdf and save it to the directory where another pdf is generated -> CHASMA
+    imagejpeg($image, $company_id.'_image.jpg');
+    // Free memory
+    imagedestroy($image);
+}
+
 ?>

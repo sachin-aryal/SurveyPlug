@@ -85,7 +85,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<form action = '<?php admin_url('admin-post.php') ?>' method = 'post' id = 'form_render_id' class = 'form-design'>
+<form action = '<?php echo admin_url('admin-post.php') ?>' method = 'post' id = 'form_render_id' class = 'form-design'>
     <div class="company-data-trigger">
         <a class="section-toggle" data-toggle="collapse" href="#companyDataTable" role="button" aria-expanded="false" aria-controls="companyDataTable">
             COMPANY DATA
