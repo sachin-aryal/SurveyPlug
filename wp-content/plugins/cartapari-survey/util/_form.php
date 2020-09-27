@@ -85,10 +85,15 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<h2>Guida alla compilazione</h2>
+<p>Comincia compilando i dati societari, poi clicca in ordine sui diversi punti del questionario per aprire la sezione relativa.
+    È necessario rispondere a tutte le domande prima di inviare il questionario.</p>
+
+
 <form action = '<?php echo admin_url('admin-post.php') ?>' method = 'post' id = 'form_render_id' class = 'form-design'>
     <div class="company-data-trigger">
         <a class="section-toggle" data-toggle="collapse" href="#companyDataTable" role="button" aria-expanded="false" aria-controls="companyDataTable">
-            COMPANY DATA
+            Dati societari
         </a>
     </div>
     <table class="collapse show" id='companyDataTable'>
@@ -118,7 +123,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
             </td>
         </tr>
         <tr>
-            <th>NUMBER OF EMPLOYEES</th>
+            <th>NUMERO DI DIPENDENTI</th>
             <td>
                 <select name='no_of_employee' required='required'>
                     <option value='0-10'>0-10</option>
@@ -141,7 +146,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
             </td>
         </tr>
         <tr>
-            <th>PERSON WHO IS FILLING THE QUESTIONAIRE</th>
+            <th>PERSONA INCARICATA DELLA COMPILAZIONE</th>
             <td><input type='text' name='author' placeholder='Name and Role' required='required'/></td>
         </tr>
         <tr>
@@ -149,7 +154,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
             <td><input type='email' name='author_email' placeholder='EMAIL PER RICEZIONE RISULTATI' required='required'/></td>
         </tr>
         <tr>
-            <th>DATE OF ISSUE</th>
+            <th>DATA DELLA COMPILAZIONE</th>
             <td><input type='date' name='issued_date' placeholder='Date of Issue' required='required'/></td>
         </tr>
 
@@ -157,12 +162,12 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     </table>
 
     <table id = 'main-form-table'>
-        <thead><th>AZIONE</th><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>ANSWER</th><th>Note</th></thead>
+        <thead><th>AZIONE</th><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>RISPOSTA</th><th>Note</th></thead>
         <tbody>
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section1" role="button" aria-expanded="false" aria-controls="section1">
-                    Section 1
+                    Punto 1
                 </a>
             </td>
         </tr>
@@ -224,7 +229,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section2" role="button" aria-expanded="false" aria-controls="section2">
-                    Section 2
+                    Punto 2
                 </a>
             </td>
         </tr>
@@ -291,7 +296,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section3" role="button" aria-expanded="false" aria-controls="section3">
-                    Section 3
+                    Punto 3
                 </a>
             </td>
         </tr>
@@ -346,7 +351,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section4" role="button" aria-expanded="false" aria-controls="section4">
-                    Section 4
+                    Punto 4
                 </a>
             </td>
         </tr>
@@ -507,7 +512,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section5" role="button" aria-expanded="false" aria-controls="section5">
-                    Section 5
+                    Punto 5
                 </a>
             </td>
         </tr>
@@ -681,7 +686,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section6" role="button" aria-expanded="false" aria-controls="section6">
-                    Section 6
+                    Punto 6
                 </a>
             </td>
         </tr>
@@ -789,7 +794,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section7" role="button" aria-expanded="false" aria-controls="section7">
-                    Section 7
+                    Punto 7
                 </a>
             </td>
         </tr>
@@ -844,7 +849,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section8" role="button" aria-expanded="false" aria-controls="section8">
-                    Section 8
+                    Punto 8
                 </a>
             </td>
         </tr>
@@ -1174,7 +1179,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section9" role="button" aria-expanded="false" aria-controls="section9">
-                    Section 9
+                    Punto 9
                 </a>
             </td>
         </tr>
@@ -1235,7 +1240,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section10" role="button" aria-expanded="false" aria-controls="section10">
-                    Section 10
+                    Punto 10
                 </a>
             </td>
         </tr>
@@ -1305,14 +1310,14 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <td colspan="7">
                 <a class="section-toggle" data-toggle="collapse" href="#section11" role="button" aria-expanded="false" aria-controls="section11">
-                    Target Diversity&Inclusion
+                    Sezione Target Diversity & Inclusion
                 </a>
             </td>
         </tr>
         <tbody class="collapse" id="section11">
         <tr>
             <td rowspan = '8'>
-                Target Diversity&Inclusion
+                Target Diversity & Inclusion
             </td>
             <td rowspan = '8' colspan = '2'>
                 Nello specifico le iniziative che avete avviato o che state
@@ -1420,5 +1425,5 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tbody>
     </table>
     <input type = 'hidden' name = 'action' value = 'form_render_save'>
-    <button class="btn btn-info" type='submit' name = 'submit'>Submit</button>
+    <button class="btn btn-info" type='submit' name = 'submit'>Invia</button>
 </form>
