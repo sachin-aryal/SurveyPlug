@@ -1,6 +1,7 @@
 <?php
 require_once('constant.php');
 require_once('helper.php');
+require_once('_add_data_excel.php');
 
 function form_render_save(){
     global $wpdb, $table_name_mapping;
@@ -28,8 +29,8 @@ function form_render_save(){
         save_survey_answer($wpdb, $lastid, $table_name_mapping);
         save_partial_rating($wpdb, $lastid, $rating[0], $table_name_mapping);
         save_total_rating($wpdb, $lastid, $rating[1], $table_name_mapping);
-        save_note($wpdb, $lastid, $table_name_mapping);
-        create_total_rating_pdf($rating[1]);   
+        save_note($wpdb, $lastid, $table_name_mapping);  
+        create_pdf_survey_report($rating);
     }
     $location = $_SERVER["HTTP_REFERER"];
     wp_safe_redirect($location);
@@ -82,10 +83,6 @@ function save_note($wpdb, $lastid, $table_name_mapping){
             $wpdb->query($sql);
         }       
     }
-}
-
-function create_total_rating_pdf($total_rating){
-    echo "test";
 }
 
 
