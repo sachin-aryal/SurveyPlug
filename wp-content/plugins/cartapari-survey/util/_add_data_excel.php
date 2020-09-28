@@ -2,13 +2,9 @@
 
 require_once('constant.php');
 require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/vendor/autoload.php');
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf;
-use PhpOffice\PhpSpreadsheet\Style\Border;
 
-function create_pdf_survey_report($rating){
+function create_pdf_survey_report($rating, $user_id){
     $reader = IOFactory::createReader("Xlsx");
     $spreadsheet = $reader->load(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/form_render_template.xlsx');
     
@@ -17,25 +13,10 @@ function create_pdf_survey_report($rating){
     add_partial_rating($spreadsheet, $rating[0]);
     add_total_rating($spreadsheet, $rating[1]);
     add_answer_note($spreadsheet);
-    
-    $spreadsheet ->getDefaultStyle()->applyFromArray(
-        [
-            'borders' => [
-                'allBorders' => [
-                    'borderStyle' => Border::BORDER_THIN,
-                    'color' => ['rgb' => '000000'],
-                ],
-            ]
-        ]
-    );
+
     $xmlWriter = IOFactory::createWriter($spreadsheet,'Mpdf');
-    
     $xmlWriter->writeAllSheets();
-    $num = rand(00, 99);
-    $xmlWriter->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/helloWorld$num.pdf');
-    
-   // $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
-    //$writer->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/05featuredemo.xlsx');
+    $xmlWriter->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/'.$user_id."_report-pdf");
 }
 
 function add_partial_rating($spreadsheet, $partial_rating){
@@ -45,20 +26,20 @@ function add_partial_rating($spreadsheet, $partial_rating){
         if(reset($index_to_partial_rating) === $index_to_partial_rating[$i]){
             $row_num = $index_to_partial_rating[$i] + 16;
             $spreadsheet->getActiveSheet()
-            ->getCell('H' . $row_num)
+            ->getCell('G' . $row_num)
             ->setValue($partial_rating[$i] . '%');
         }else{
             if($index_to_partial_rating[$i] - $index_to_partial_rating[$j] === 1){
                 $row_num = $index_to_partial_rating[$i] + 16;
                 $spreadsheet->getActiveSheet()
-                ->getCell('H' . $row_num)
+                ->getCell('G' . $row_num)
                 ->setValue($partial_rating[$i] . '%');
             }else{
                 $row_num = $index_to_partial_rating[$i] + 16;
                 $last_row_num = $index_to_partial_rating[$j] + 17;
                 
                 $spreadsheet->getActiveSheet()
-                    ->getCell('H' . $last_row_num)
+                    ->getCell('G' . $last_row_num)
                     ->setValue($partial_rating[$i] . '%');
                 
             }
@@ -72,7 +53,7 @@ function add_total_rating($spreadsheet, $total_rating){
     for($i = 0; $i < count($index_to_total_excel); $i++){
         $row_num = $index_to_total_excel[$i] + 16;
         $spreadsheet->getActiveSheet()
-        ->getCell('I' . $row_num)
+        ->getCell('H' . $row_num)
         ->setValue($total_rating[$i] . "%");
     }   
 }

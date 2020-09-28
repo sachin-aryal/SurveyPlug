@@ -30,7 +30,7 @@ function form_render_save(){
         save_partial_rating($wpdb, $lastid, $rating[0], $table_name_mapping);
         save_total_rating($wpdb, $lastid, $rating[1], $table_name_mapping);
         save_note($wpdb, $lastid, $table_name_mapping);  
-        create_pdf_survey_report($rating);
+        create_pdf_survey_report($rating, $user_id);
     }
     $location = $_SERVER["HTTP_REFERER"];
     wp_safe_redirect($location);
