@@ -30,7 +30,8 @@ function form_render_save(){
         save_partial_rating($wpdb, $lastid, $rating[0], $table_name_mapping);
         save_total_rating($wpdb, $lastid, $rating[1], $table_name_mapping);
         save_note($wpdb, $lastid, $table_name_mapping);  
-        create_pdf_survey_report($rating, $user_id);
+        create_pdf_survey_report($rating, $lastid);
+        $first_report_path = createFirstReport($wpdb, $lastid, $table_name_mapping["total_rating"]);
     }
     $location = $_SERVER["HTTP_REFERER"];
     wp_safe_redirect($location);
@@ -63,7 +64,7 @@ function save_partial_rating($wpdb, $lastid, $partial_rating, $table_name_mappin
 }
 
 function save_total_rating($wpdb, $lastid, $total_rating, $table_name_mapping){
-    $table_name = $table_name_mapping["total_rating"];;
+    $table_name = $table_name_mapping["total_rating"];
     $query = "INSERT INTO `$table_name` (`company_id`, `total_id`, `survey_total_rating`)
         VALUES ('%d','%d', '%d')";
     foreach($total_rating as $key => $value){
@@ -86,7 +87,8 @@ function save_note($wpdb, $lastid, $table_name_mapping){
 }
 
 
-function createImage($wpdb, $company_id, $total_rating_table){
+function createFirstReport($wpdb, $company_id, $total_rating_table){
+    $base_path = ABSPATH . 'wp-content/plugins/cartapari-survey/assets';
     $my_ratings = get_my_rating($wpdb, $company_id, $total_rating_table);
     $total = 0;
     foreach ($my_ratings as $my_rating){
@@ -100,7 +102,7 @@ function createImage($wpdb, $company_id, $total_rating_table){
     $image = imagecreatetruecolor($width, $height);
     $white = imagecolorallocate($image, 255, 255, 255);
     $black = imagecolorallocate($image, 0, 0, 0);
-    $font_path = 'arial.ttf';
+    $font_path = $base_path.'/arial.ttf';
 
     // Draw the rectangle of green color
     imagefilledrectangle($image, 0, 0, $width, $height, $white);
@@ -124,10 +126,18 @@ function createImage($wpdb, $company_id, $total_rating_table){
         imagettftext($image, 14, 0, $x1+40, 292, $black, $font_path, "$best_rating->survey_total_rating%");
         $index += 1;
     }
-    # TODO:Convert this image to pdf and save it to the directory where another pdf is generated -> CHASMA
-    imagejpeg($image, $company_id.'_image.jpg');
-    // Free memory
+    $image_path = $base_path."/".$company_id.'_image.jpg';
+    imagejpeg($image, $image_path);
+    $mpdf = new \Mpdf\Mpdf();
+    $html='<h2 style="text-align: center;">Overall Rating</h2>';
+    $mpdf->WriteHTML($html);
+    $html='<img style="height: 400px" src="'.$image_path.'"/>';
+    $mpdf->WriteHTML($html);
+    $report_path = $base_path."/".$company_id."_rating_report.pdf";
+    $mpdf->Output($report_path,'F');
     imagedestroy($image);
+    unlink($image_path);
+    return $report_path;
 }
 
 ?>

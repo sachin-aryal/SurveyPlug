@@ -4,7 +4,7 @@ require_once('constant.php');
 require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/vendor/autoload.php');
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-function create_pdf_survey_report($rating, $user_id){
+function create_pdf_survey_report($rating, $company_id){
     $reader = IOFactory::createReader("Xlsx");
     $spreadsheet = $reader->load(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/form_render_template.xlsx');
     
@@ -16,7 +16,7 @@ function create_pdf_survey_report($rating, $user_id){
 
     $xmlWriter = IOFactory::createWriter($spreadsheet,'Mpdf');
     $xmlWriter->writeAllSheets();
-    $xmlWriter->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/'.$user_id."_report.pdf");
+    $xmlWriter->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/'.$company_id."_report.pdf");
 }
 
 function add_partial_rating($spreadsheet, $partial_rating){
