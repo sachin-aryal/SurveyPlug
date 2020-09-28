@@ -16,7 +16,7 @@ function create_pdf_survey_report($rating, $user_id){
 
     $xmlWriter = IOFactory::createWriter($spreadsheet,'Mpdf');
     $xmlWriter->writeAllSheets();
-    $xmlWriter->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/'.$user_id."_report-pdf");
+    $xmlWriter->save(ABSPATH . 'wp-content/plugins/cartapari-survey/assets/'.$user_id."_report.pdf");
 }
 
 function add_partial_rating($spreadsheet, $partial_rating){
@@ -62,9 +62,7 @@ function add_answer_note($spreadsheet){
     global $index_to_note2;
     foreach($_POST as $key => $value){
         $note = explode('_',$key);
-        
         if(($note[0] == 'note')){
-            
             $row_num = 16 + $index_to_note2[(int)$note[1]-1];
             if($row_num === 75){
                 $spreadsheet->getActiveSheet()
@@ -72,12 +70,10 @@ function add_answer_note($spreadsheet){
                 ->setValue($value);
             }else{
                 $spreadsheet->getActiveSheet()
-                ->getCell('J' . $row_num)
+                ->getCell('I' . $row_num)
                 ->setValue($value);
-            }
-            
-        }  
-        
+            }  
+        }     
     }
 }
 
