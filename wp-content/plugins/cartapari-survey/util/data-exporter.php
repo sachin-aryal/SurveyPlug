@@ -11,7 +11,9 @@ function exportReportFile(){
     global $table_name_mapping;
     global $wpdb, $question_answer_mapping, $question_map, $index_to_partial_rating, $index_to_total_rating, $index_to_note;
     $result = $wpdb->get_results ( "SELECT * FROM  ".$table_name_mapping["company_info"]);
-    $header = array("DATI ANAGRIFICI, DOMANDE, PUNTEGGI E NOTE", "NOME AZIENDA", "TIPOLOGIA DI ORGANIZZAZIONE");
+    $header = array("DATI ANAGRIFICI, DOMANDE, PUNTEGGI E NOTE", "NOME AZIENDA", "TIPOLOGIA DI ORGANIZZAZIONE",
+        "SETTORE", "NUMERO DI DIPENDENTI", "PROVINCIA", "PERSONA INCARICATA DELLA COMPILAZIONE",
+        "EMAIL PER RICEZIONE RISULTATI", "DATA DELLA COMPILAZIONE");
     foreach ($question_map as $questions){
         foreach ($questions as $each_question){
             $main_label = "";
@@ -60,6 +62,12 @@ function exportReportFile(){
         $company_type = $company -> company_type;
         array_push($csv_rows, $company_name);
         array_push($csv_rows, $company_type);
+        array_push($csv_rows, $company -> sector);
+        array_push($csv_rows, $company -> no_of_employee);
+        array_push($csv_rows, $company -> state);
+        array_push($csv_rows, $company -> author);
+        array_push($csv_rows, $company -> author_email);
+        array_push($csv_rows, $company -> issued_date);
         $answers = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["survey_answer"]." WHERE company_id=$company_id ORDER BY question_id ASC");
         $partial_rating = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["partial_rating"]." WHERE company_id=$company_id ORDER BY partial_id ASC");
         $total_rating = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["total_rating"]." WHERE company_id=$company_id ORDER BY total_id ASC");

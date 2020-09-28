@@ -86,7 +86,6 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     }
 </style>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <h2>Guida alla compilazione</h2>
@@ -166,7 +165,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     </table>
 
     <table id = 'main-form-table'>
-        <thead><th>AZIONE</th><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>RISPOSTA</th><th>Note</th></thead>
+        <thead class="d-none table-header"><th>AZIONE</th><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>RISPOSTA</th><th>Note</th></thead>
         <tbody>
         <tr>
             <td colspan="7">
@@ -1431,3 +1430,24 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     <input type = 'hidden' name = 'action' value = 'form_render_save'>
     <button class="btn btn-info form-submit-button" type='submit' name = 'submit'>Invia</button>
 </form>
+
+<script type="text/javascript">
+    jQuery(function(){
+        jQuery(".section-toggle").on("click", function() {
+            if(jQuery(this).attr("aria-expanded") == "false"){
+                jQuery(".table-header").removeClass("d-none");
+                return;
+            }
+            let els = jQuery("td>a.section-toggle");
+            let trueCount = 0;
+            for(let i=0;i<els.length;i++){
+                if(jQuery(els[i]).attr("aria-expanded") == "true"){
+                    trueCount = trueCount+1;
+                }
+            }
+            if(trueCount <= 1){
+                jQuery(".table-header").addClass("d-none");
+            }
+        });
+    })
+</script>
