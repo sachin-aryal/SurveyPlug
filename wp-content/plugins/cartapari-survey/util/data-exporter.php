@@ -67,7 +67,7 @@ function exportReportFile(){
         array_push($csv_rows, $company -> state);
         array_push($csv_rows, $company -> author);
         array_push($csv_rows, $company -> author_email);
-        array_push($csv_rows, $company -> issued_date);
+        array_push($csv_rows, $company -> issue_date);
         $answers = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["survey_answer"]." WHERE company_id=$company_id ORDER BY question_id ASC");
         $partial_rating = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["partial_rating"]." WHERE company_id=$company_id ORDER BY partial_id ASC");
         $total_rating = $wpdb->get_results("SELECT *FROM ".$table_name_mapping["total_rating"]." WHERE company_id=$company_id ORDER BY total_id ASC");

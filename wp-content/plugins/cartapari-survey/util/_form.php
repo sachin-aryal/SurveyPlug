@@ -38,7 +38,6 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         border: 1px solid #333 !important;
         padding: 5px !important;
         font-size: 12px;
-        width: 10% !important;
     }
     #companyDataTable th{
         float: left !important;
@@ -84,6 +83,12 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     .form-submit-button{
         margin-left: 10px;
     }
+    .header-main{
+        font-size: 14px !important;
+    }
+    #main-form-table .text-area-class {
+        width: 20% !important;
+    }
 </style>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -126,6 +131,10 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
             </td>
         </tr>
         <tr>
+            <td></td>
+            <td id="sector-td"></td>
+        </tr>
+        <tr>
             <th>NUMERO DI DIPENDENTI</th>
             <td>
                 <select name='no_of_employee' required='required'>
@@ -165,22 +174,20 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     </table>
 
     <table id = 'main-form-table'>
-        <thead class="d-none table-header"><th>AZIONE</th><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>RISPOSTA</th><th>Note</th></thead>
+        <thead class="d-none table-header"><th>RIFERIMENTO</th><th>REQUISITO</th><th>CRITERIO</th><th></th><th>RISPOSTA</th><th>Note</th></thead>
         <tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section1" role="button" aria-expanded="false" aria-controls="section1">
                     Punto 1
                 </a>
+                | Definire e attuare politiche aziendali che, a partire dal vertice, coinvolgano tutti i
+                    livelli dell’organizzazione nel rispetto del principio della pari dignità e trattamento sul lavoro
             </td>
         </tr>
         <tbody class="collapse" id="section1">
         <tr>
-            <td rowspan = '2'>
-                Definire e attuare politiche aziendali che, a partire dal vertice, coinvolgano tutti i
-                livelli dell’organizzazione nel rispetto del principio della pari dignità e trattamento sul lavoro
-            </td>
-            <td>
+            <td width="5%">
                 1.1
             </td>
             <td>
@@ -201,7 +208,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate, se si è scelto `altro`, indicare esplicitamente di cosa si tratta'
                           name = 'note_1' id='note_1'></textarea>
             </td>
@@ -224,24 +231,22 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_2' id='note_2'></textarea>
             </td>
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section2" role="button" aria-expanded="false" aria-controls="section2">
                     Punto 2
                 </a>
+                | Individuare funzioni aziendali alle quali attribuire chiare
+                    responsabilità in materia di pari opportunità
             </td>
         </tr>
         <tbody class="collapse" id="section2">
         <tr>
-            <td rowspan = '2'>
-                Individuare funzioni aziendali alle quali attribuire chiare
-                responsabilità in materia di pari opportunità
-            </td>
             <td>
                 2.1
             </td>
@@ -268,7 +273,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare a quale delle opzioni indicate si fa riferimento. Se si è scelto `altro`, indicare esplicitamente il ruolo della persona che ha assunto la responsabilità'
                           name = 'note_3' id ='note_3'></textarea>
             </td>
@@ -291,24 +296,22 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_4' id ='note_4'></textarea>
             </td>
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section3" role="button" aria-expanded="false" aria-controls="section3">
                     Punto 3
                 </a>
+                | Superare gli stereotipi di genere, attraverso adeguate politiche aziendali,
+                    formazione e sensibilizzazione, anche promuovendo i percorsi di carriera
             </td>
         </tr>
         <tbody class="collapse" id="section3">
         <tr>
-            <td rowspan = '2'>
-                Superare gli stereotipi di genere, attraverso adeguate politiche aziendali,
-                formazione e sensibilizzazione, anche promuovendo i percorsi di carriera
-            </td>
             <td>
                 3.1
             </td>
@@ -326,7 +329,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '2'>
+            <td rowspan = '2' class="text-area-class">
                 <textarea rows='4' placeholder='Indicare la % di popolazione aziendale femminile e illustrare le azioni intraprese.'
                           name = 'note_5' id ='note_5'></textarea>
             </td>
@@ -352,21 +355,20 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section4" role="button" aria-expanded="false" aria-controls="section4">
                     Punto 4
                 </a>
+                | Integrare il principio di parità di trattamento nei processi che
+                    regolano tutte le fasi della vita professionale e della valorizzazione
+                    delle risorse umane, affinché le decisioni relative ad assunzione, formazione
+                    e sviluppo di carriera &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                vengano prese unicamente in base alle competenze, all’esperienza,
+                    al potenziale professionale delle persone.
             </td>
         </tr>
         <tbody class="collapse" id="section4">
         <tr>
-            <td rowspan = '9'>
-                Integrare il principio di parità di trattamento nei processi che
-                regolano tutte le fasi della vita professionale e della valorizzazione
-                delle risorse umane, affinché le decisioni relative ad assunzione, formazione
-                e sviluppo di carriera vengano prese unicamente in base alle competenze, all’esperienza,
-                al potenziale professionale delle persone.
-            </td>
             <td rowspan = '5'>
                 4.1
             </td>
@@ -387,7 +389,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '5'>
+            <td rowspan = '5' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali processi si fa riferimento'
                           name = 'note_6' id ='note_6'></textarea>
             </td>
@@ -468,7 +470,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '4'>
+            <td rowspan = '4' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali modalità si fa riferimento' name = 'note_7' id ='note_7'></textarea>
             </td>
         </tr>
@@ -513,18 +515,16 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section5" role="button" aria-expanded="false" aria-controls="section5">
                     Punto 5
                 </a>
+                | Sensibilizzare e formare adeguatamente tutti i livelli dell’organizzazione
+                    sul valore della diversità e sulle modalità di gestione delle stesse
             </td>
         </tr>
         <tbody class="collapse" id="section5">
         <tr>
-            <td rowspan = '10'>
-                Sensibilizzare e formare adeguatamente tutti i livelli dell’organizzazione
-                sul valore della diversità e sulle modalità di gestione delle stesse
-            </td>
             <td rowspan = '4'>
                 5.1
             </td>
@@ -547,7 +547,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '4'>
+            <td rowspan = '4' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali interventi si fa riferimento' name = 'note_8' id ='note_8'></textarea>
             </td>
         </tr>
@@ -611,7 +611,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '6'>
+            <td rowspan = '6' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' name = 'note_9' id ='note_9'></textarea>
             </td>
         </tr>
@@ -687,18 +687,15 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section6" role="button" aria-expanded="false" aria-controls="section6">
                     Punto 6
                 </a>
+                | Monitorare periodicamente l’andamento delle pari opportunità e valutarne l’impatto delle buone pratiche.
             </td>
         </tr>
         <tbody class="collapse" id="section6">
         <tr>
-
-            <td rowspan = '5'>
-                Monitorare periodicamente l’andamento delle pari opportunità e valutarne l’impatto delle buone pratiche.
-            </td>
             <td>
                 6.1
             </td>
@@ -715,7 +712,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '5'>
+            <td rowspan = '5' class="text-area-class">
                 <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_10' id ='note_10'></textarea>
             </td>
         </tr>
@@ -795,18 +792,15 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section7" role="button" aria-expanded="false" aria-controls="section7">
                     Punto 7
                 </a>
+                | Individuare e fornire al personale strumenti interni a garanzia della effettiva tutela della parità di trattamento
             </td>
         </tr>
         <tbody class="collapse" id="section7">
         <tr>
-
-            <td rowspan = '2'>
-                Individuare e fornire al personale strumenti interni a garanzia della effettiva tutela della parità di trattamento
-            </td>
             <td>
                 7.1
             </td>
@@ -822,7 +816,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '2'>
+            <td rowspan = '2' class="text-area-class">
                 <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_11' id ='note_11'></textarea>
             </td>
         </tr>
@@ -850,22 +844,20 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section8" role="button" aria-expanded="false" aria-controls="section8">
                     Punto 8
                 </a>
+                    | Fornire strumenti concreti per favorire la conciliazione dei tempi
+                    di vita e di lavoro favorendo l’incontro tra domanda e offerta di flessibilità
+                    aziendale e delle persone, anche con adeguate politiche aziendali e contrattuali,
+                    in &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                collaborazione con il territorio e la convenzione con i servizi pubblici e privati
+                    integrati; assicurando una formazione adeguata al rientro dei congedi parentali
             </td>
         </tr>
         <tbody class="collapse" id="section8">
         <tr>
-
-            <td rowspan = '21'>
-                Fornire strumenti concreti per favorire la conciliazione dei tempi
-                di vita e di lavoro favorendo l’incontro tra domanda e offerta di flessibilità
-                aziendale e delle persone, anche con adeguate politiche aziendali e contrattuali,
-                in collaborazione con il territorio e la convenzione con i servizi pubblici e privati
-                integrati; assicurando una formazione adeguata al rientro dei congedi parentali
-            </td>
             <td rowspan = '7'>
                 8.1
             </td>
@@ -884,7 +876,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare a quale delle opzioni indicate si fa riferimento.' name = 'note_12' id ='note_12'></textarea>
             </td>
         </tr>
@@ -902,7 +894,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '6'>
+            <td rowspan = '6' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento'
                           name = 'note_13' id ='note_13'></textarea>
             </td>
@@ -993,7 +985,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '9'>
+            <td rowspan = '9' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' name = 'note_14' id ='note_14'></textarea>
             </td>
         </tr>
@@ -1122,7 +1114,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '5'>
+            <td rowspan = '5' class="text-area-class">
                 <textarea rows='4' placeholder='Se si è scelto `altro`, indicare a quali programmi si fa riferimento' name = 'note_15' id ='note_15'></textarea>
             </td>
         </tr>
@@ -1180,19 +1172,17 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section9" role="button" aria-expanded="false" aria-controls="section9">
                     Punto 9
                 </a>
+                    | Comunicare al personale, con le modalità più opportune, l’impegno
+                    assunto a favore di una cultura aziendale della pari opportunità,
+                    informandolo sui progetti intrapresi in tali ambiti e sui risultati pratici conseguiti.
             </td>
         </tr>
         <tbody class="collapse" id="section9">
         <tr>
-            <td rowspan = '2'>
-                Comunicare al personale, con le modalità più opportune, l’impegno
-                assunto a favore di una cultura aziendale della pari opportunità,
-                informandolo sui progetti intrapresi in tali ambiti e sui risultati pratici conseguiti.
-            </td>
             <td rowspan = '2'>
                 9.1
             </td>
@@ -1216,7 +1206,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate, se si è scelto `altro`, indicare esplicitamente a quale strumento si fa riferimento' name = 'note_16' id ='note_16'></textarea>
             </td>
         </tr>
@@ -1235,25 +1225,23 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate,se si è scelto `altro`, indicare esplicitamente cosa viene comunicato' name = 'note_17' id ='note_17'></textarea>
             </td>
         </tr>
         </tbody>
         <tr>
-            <td colspan="7">
+            <td colspan="7" class="header-main">
                 <a class="section-toggle" data-toggle="collapse" href="#section10" role="button" aria-expanded="false" aria-controls="section10">
                     Punto 10
                 </a>
+                | Promuovere la visibilità esterna dell’impegno aziendale, dando
+                    testimonianza delle politiche adottate e dei progressi ottenuti in un’ottica
+                    di comunità realmente solidale e responsabile.
             </td>
         </tr>
         <tbody class="collapse" id="section10">
         <tr>
-            <td rowspan = '2'>
-                Promuovere la visibilità esterna dell’impegno aziendale, dando
-                testimonianza delle politiche adottate e dei progressi ottenuti in un’ottica
-                di comunità realmente solidale e responsabile.
-            </td>
             <td>
                 10.1
             </td>
@@ -1277,7 +1265,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate, se si è scelto `altro`, indicare esplicitamente a quale strumento si fa riferimento' name = 'note_18' id ='note_18'></textarea>
             </td>
         </tr>
@@ -1302,7 +1290,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td>
+            <td class="text-area-class">
                 <textarea rows='4' placeholder='Specificare quali delle opzioni indicate sono state implementate,se si è scelto `altro`, indicare esplicitamente a cosa si fa riferimento' name = 'note_19' id ='note_19'></textarea>
             </td>
         </tr>
@@ -1319,9 +1307,6 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         </tr>
         <tbody class="collapse" id="section11">
         <tr>
-            <td rowspan = '8'>
-                Target Diversity & Inclusion
-            </td>
             <td rowspan = '8' colspan = '2'>
                 Nello specifico le iniziative che avete avviato o che state
                 inviando nella vostra organizzazione verso quale ambito di Diversity
@@ -1336,7 +1321,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                     <option value='NO'>NO</option>
                 </select>
             </td>
-            <td rowspan = '8'>
+            <td rowspan = '8' class="text-area-class">
                 <textarea rows='4' placeholder='Commento libero non obbligatorio' name = 'note_20' id ='comments'></textarea>
             </td>
         </tr>
@@ -1449,5 +1434,23 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
                 jQuery(".table-header").addClass("d-none");
             }
         });
+        jQuery("select[name=sector]").change(function(){
+           let value = jQuery(this).val();
+           if(value === "Altro (specificare)"){
+               jQuery("#sector-td").append(
+                   jQuery("<input type='text' placeholder='SETTORE' name='sector' id='sector-input' required='required'/>")
+               )
+           }else{
+                let sectorInput = jQuery("#sector-input");
+                if(sectorInput){
+                    sectorInput.remove();
+                }
+           }
+        });
+        const now = new Date();
+        let day = ("0" + now.getDate()).slice(-2);
+        const month = ("0" + (now.getMonth() + 1)).slice(-2);
+        const today = now.getFullYear() + "-" + (month) + "-" + (day);
+        jQuery("input[name=issued_date").val(today);
     })
 </script>

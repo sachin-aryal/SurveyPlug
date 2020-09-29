@@ -27,8 +27,8 @@ require_once( ABSPATH . 'wp-content/plugins/cartapari-survey/util/data-exporter.
 add_action("wp_enqueue_scripts","render_css");
 add_action("admin_menu", "addMenu");
 function addMenu(){
-    add_menu_page("CartaPari Survey", "CartaPari Survey", "edit_pages", "cartapari-survey", "cartapariSurvey");
-    add_submenu_page("cartapari-survey", "Export Data", "Survey Form", "edit_pages", "cartapari-survey-export", "exportCartapariSurveyData");
+    add_menu_page("Questionario Pari opportunita", "Questionario Pari opportunita", "edit_pages", "questionario-pari-opportunita", "cartapariSurvey");
+//    add_submenu_page("questionario-pari-opportunita", "Export Data", "Survey Form", "edit_pages", "cartapari-survey-export", "exportCartapariSurveyData");
 }
 
 function cartapariSurvey(){
