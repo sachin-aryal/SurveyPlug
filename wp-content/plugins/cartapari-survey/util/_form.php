@@ -89,9 +89,15 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
     #main-form-table .text-area-class {
         width: 20% !important;
     }
+    .collapsing {
+        -webkit-transition: none;
+        transition: none;
+        display: none;
+    }
 </style>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <h2>Guida alla compilazione</h2>
 <p>Comincia compilando i dati societari, poi clicca in ordine sui diversi punti del questionario per aprire la sezione relativa.
@@ -150,11 +156,7 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         <tr>
             <th>PROVINCIA</th>
             <td>
-                <select name='state' required='required'>
-                    <?php foreach ($states as $state){
-                        echo "<option value='$state'>$state</option>";
-                    }?>
-                </select>
+                <input id="states" name='state' required='required' type="text">
             </td>
         </tr>
         <tr>
@@ -1421,6 +1423,12 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         jQuery(".section-toggle").on("click", function() {
             if(jQuery(this).attr("aria-expanded") == "false"){
                 jQuery(".table-header").removeClass("d-none");
+                let els = jQuery("td>a.section-toggle");
+                for(let i=0;i<els.length;i++){
+                    if(jQuery(els[i]).attr("aria-expanded") == "true" && els[i] != this){
+                        jQuery(els[i]).click();
+                    }
+                }
                 return;
             }
             let els = jQuery("td>a.section-toggle");
@@ -1452,5 +1460,11 @@ $sectors = array("Agricoltura-altri settori rurali","Alimentari-bevande-tabacco"
         const month = ("0" + (now.getMonth() + 1)).slice(-2);
         const today = now.getFullYear() + "-" + (month) + "-" + (day);
         jQuery("input[name=issued_date").val(today);
+        let availableStates = [<?php echo '"' . implode ('","', $states) . '"'; ?>];
+        availableStates.sort();
+        jQuery( "#states" ).autocomplete({
+            source: availableStates
+        });
+
     })
 </script>

@@ -153,6 +153,8 @@ function createFirstReport($wpdb, $company_id, $total_rating_table, $report_dire
     $image_path = $report_directory."/".$company_id.'_image.jpg';
     imagejpeg($image, $image_path);
     $mpdf = new \Mpdf\Mpdf();
+    $html='<img src="'.$base_path.'/logo/header-completo.png"/>';
+    $mpdf->WriteHTML($html);
     $html='<h2 style="text-align: center;">Riassunto Punteggio</h2>';
     $mpdf->WriteHTML($html);
     $html='<img style="height: 400px" src="'.$image_path.'"/>';
